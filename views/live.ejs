@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Automatic Plant Watering Device</h1>
+        </div>
+        <nav>
+            <ul class="navbar">
+                <li><a href="/" class="home">Home</a></li>
+                <li><a href="/live" class="live active">Live Data</a></li>
+                <li><a href="/team" class="team">Team</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="live">
+    <div class="content">
+        <div class="content-box">
+            <h2>Live Data</h2>
+            <div id="live-data">
+                <!-- Live data will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function fetchData() {
+            fetch('api/data')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('live-data').innerHTML =
+                        `<p>Moisture Level: ${data.moistureLevel}%</p>` +
+                        `<p>Pump Status: ${data.pumpStatus}</p>`;
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+        // Fetch data every 5 seconds
+        setInterval(fetchData, 5000);
+
+        // Initial fetch
+        fetchData();
+    </script>
+    </section>
+    
+</body>
+</html>

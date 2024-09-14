@@ -1,0 +1,65 @@
+body {
+    font-family: 'Jost', Arial, sans-serif;
+    background-color: #ffffff;
+    color: #070707;
+    margin: 0;
+    padding: 0;
+    background-image: url("bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+}
+
+nav {
+    background-color: #333;
+}
+
+nav ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 50px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    transition: 0.15s;
+}
+
+nav ul li a:hover {
+    background-color: #4CAF50;
+}
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: rgba(235, 239, 232, 0.7);
+    backdrop-filter: blur(8px);
+    border-radius:9px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+h2 {
+    color: #257a27;
+    font-size: 32px;
+    font-weight:700;
+}
